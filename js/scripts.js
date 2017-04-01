@@ -15,10 +15,25 @@ jQuery(function( $ ) {
 
 		var $boxHeight = $(this).siblings('.accordion-item-content').height();
 
-		console.log($(this).parent().scrollTop());
-		console.log($boxHeight1, $boxHeight);
-		console.log($(this).parent().hasClass('open'));
+		// console.log($(this).parent().scrollTop());
+		// console.log($boxHeight1, $boxHeight);
+		// console.log($(this).parent().hasClass('open'));
 	});
+
+	// On click accordion-item
+	// stick it smoothly on top of the window
+	$('.accordion-item').click(function() {
+		var x = $(this).offset().top;
+		var y = $(window).scrollTop();
+
+		$('html, body').animate({
+	        'scrollTop' : $(this).position().top
+	    });
+
+		console.log(x, y);
+	});
+
+	
 
 	// Slider
 	$('.slider').slick({

@@ -540,6 +540,13 @@ button.btn-cta:after {
   font-weight: bold;
 }
 
+.vline {
+  display: inline-block;
+  background: #fff;
+  width: 2px;
+  height: 103px;
+}
+
 /*     Hero
 =====================*/
 .hero {
@@ -719,6 +726,14 @@ button.btn-cta:after {
   position: absolute;
   bottom: 10px;
   width: 100%;
+}
+
+.after-hero .vline {
+  height: 54px;
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Services
@@ -949,6 +964,7 @@ button.btn-cta:after {
 .img-section-2 {
   background: #323131;
   padding: 20px;
+  position: relative;
 }
 
 .img-section-2 .inner {
@@ -978,6 +994,13 @@ button.btn-cta:after {
   transform: translateY(-50%);
 }
 
+.img-section-2 .vline {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  z-index: 10;
+}
+
 /* Slider
 =============================*/
 .slider {
@@ -988,6 +1011,29 @@ button.btn-cta:after {
 
 .slider img {
   width: 100%;
+}
+
+.slick-prev,
+.slick-next {
+  background: none;
+  border: none;
+  background-image: url("images/slider-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -999px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.slick-prev {
+  left: 20px;
+}
+
+.slick-next {
+  right: 20px;
+  transform: translateY(-50%) rotateY(180deg);
 }
 
 /* Open-hours
