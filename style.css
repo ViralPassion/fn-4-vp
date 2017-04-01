@@ -640,14 +640,16 @@ button.btn-cta:after {
 }
 
 .call-now .btn-cta,
+.extras .btn-cta,
 .hero-lower .btn-cta {
   font-size: 28px;
 }
 
 .call-now .btn-cta i,
+.extras .btn-cta i,
 .hero-lower .btn-cta i {
   font-size: 36px;
-  vertical-align: middle;
+  vertical-align: top;
   margin-top: -3px;
   margin-right: 5px;
 }
@@ -755,6 +757,7 @@ button.btn-cta:after {
   font-size: 28px;
   padding: 12px;
   position: relative;
+  box-shadow: inset 0px 3px 4px 2px rgba(0, 0, 0, 0.08);
 }
 
 .accordion-item button i {
@@ -763,6 +766,10 @@ button.btn-cta:after {
   top: 30%;
   pointer-events: none;
   transition: 0.2s ease;
+}
+
+.accordion-item:first-child button {
+  box-shadow: none;
 }
 
 .accordion-item .accordion-item-content {
@@ -784,7 +791,11 @@ button.btn-cta:after {
 }
 
 .accordion-item-list {
-  padding: 0;
+  padding: 0 0 20px;
+}
+
+.accordion-item-list li:last-child .line {
+  display: none;
 }
 
 .service-item-title {
@@ -824,6 +835,7 @@ button.btn-cta:after {
   background: #E0D2C8;
   font-size: 18px;
   padding: 30px 20px 40px;
+  position: relative;
 }
 
 .extras > p span {
@@ -833,6 +845,7 @@ button.btn-cta:after {
 
 .extras .btn-cta {
   background: #D2B9A7;
+  min-width: 200px;
 }
 
 .extras-list {
@@ -849,6 +862,39 @@ button.btn-cta:after {
 .extras-list .amount {
   font-size: 11px;
   float: right;
+}
+
+.deco-plus-sign {
+  display: block;
+  background-color: #E0D2C8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.deco-plus-sign svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.deco-plus-sign:after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  animation: rotate 90s infinite;
 }
 
 /* Image section 2
@@ -904,6 +950,29 @@ button.btn-cta:after {
   height: 224px;
   background-color: #D2B9A7;
   padding-top: 30px;
+  position: relative;
+}
+
+.hours-open:before, .hours-open:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+}
+
+.hours-open:before {
+  border-bottom: 19px solid #D2B9A7;
+  top: -19px;
+}
+
+.hours-open:after {
+  border-top: 19px solid #D2B9A7;
+  bottom: -19px;
 }
 
 .hours-open .material-icons {
@@ -921,6 +990,8 @@ button.btn-cta:after {
 
 .hours-open .text-2 {
   color: #323131;
+  font-family: Arial;
+  font-weight: 700;
 }
 
 .deco-double-line {
@@ -971,9 +1042,13 @@ button.btn-cta:after {
 =============================*/
 .call-now .img-area {
   position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
-.call-now .img-area .deco-corner {
+.call-now .deco-corner {
   width: 133px;
   height: 104px;
   border-left: 2px solid #fff;
@@ -983,7 +1058,7 @@ button.btn-cta:after {
   left: 10px;
 }
 
-.call-now .img-area .deco-corner:after {
+.call-now .deco-corner:after {
   content: '';
   display: block;
   width: 100%;
@@ -996,7 +1071,13 @@ button.btn-cta:after {
 }
 
 .call-now img {
-  width: 100%;
+  height: 100%;
+  max-width: none;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 125px;
+  transform: scale(2.2) translateX(-22%);
 }
 
 .call-now .button-area {
@@ -1007,6 +1088,7 @@ button.btn-cta:after {
 .call-now .btn-cta {
   background: #D2B9A7;
   margin: -40px auto 0;
+  min-width: 200px;
 }
 
 /* Animations
@@ -1034,7 +1116,13 @@ button.btn-cta:after {
   height: 2px;
   width: 60%;
   max-width: 200px;
-  margin: 30px 0;
+  margin-bottom: 30px;
+}
+
+.alter-logo {
+  background: url("images/wand.png") no-repeat center;
+  padding: 60px 0 20px;
+  margin-bottom: 15px;
 }
 
 .alter-logo h3 {
@@ -1043,22 +1131,26 @@ button.btn-cta:after {
 
 .alter-logo p {
   font-size: 18px;
+  margin-bottom: 0;
 }
 
 .tel {
-  font-family: "Comfortaa", cursive;
+  font-family: Arial;
   font-size: 20px;
   margin-bottom: 0;
 }
 
 .social-links {
-  margin: 30px 0 50px;
+  margin: 30px 0 40px;
+}
+
+.social-links a {
+  padding: 0 15px;
 }
 
 .footer-menu {
   font-size: 13px;
   padding-left: 0;
-  margin-bottom: -15px;
 }
 
 .footer-menu li {
@@ -1075,7 +1167,7 @@ button.btn-cta:after {
 .copyright {
   font-size: 11px;
   font-weight: 300;
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 /* -----------------------------------------
