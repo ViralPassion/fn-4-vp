@@ -699,8 +699,15 @@ button.btn-cta:after {
 }
 
 .after-hero .inner .line-1 {
-  margin-top: 64px;
-  margin-right: 13%;
+  position: absolute;
+  top: 65px;
+  right: 13%;
+}
+
+.after-hero .inner .line-2 {
+  position: absolute;
+  top: 70px;
+  right: 18%;
 }
 
 .after-hero .inner p {
@@ -709,8 +716,13 @@ button.btn-cta:after {
   margin: 0;
 }
 
+.after-hero .inner .text-1 {
+  margin-left: -20px;
+}
+
 .after-hero .inner .text-2 {
   margin-bottom: 30px;
+  margin-left: -10px;
 }
 
 .after-hero .inner .text-3 {

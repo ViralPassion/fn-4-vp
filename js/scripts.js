@@ -33,7 +33,25 @@ jQuery(function( $ ) {
 		console.log(x, y);
 	});
 
-	
+
+	// After hero Text effect
+	// =============================
+
+	var offset = $('.after-hero').offset();
+	var windowHeight = $(window).height();
+
+	$(window).scroll(function() {
+		var st = $(this).scrollTop();
+
+		$('.after-hero .text-1').css("margin-left", - 20 + (st/ 8) );
+		$('.after-hero .text-2').css("margin-left", - 10 + (st/ 12)  );
+		$('.after-hero .text-3').css("margin-right", st  / 10 );
+		$('.after-hero .line-1').css("right", 40 + st  / 10 );
+		$('.after-hero .line-2').css("right", 18 + st  / 7 );
+
+	});
+
+
 
 	// Slider
 	$('.slider').slick({
