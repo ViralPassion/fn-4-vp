@@ -1,6 +1,21 @@
 jQuery(function( $ ) {
 	'use strict';
 
+
+	//  Language Chooser Pop up
+	// ===============================
+
+	$('.btn-lang-chooser').click(function() {
+		$('.lang-chooser-container').addClass('visible');
+	});
+	$('.lang-chooser-container .close').click(function() {
+		$('.lang-chooser-container').removeClass('visible');
+	});
+
+
+
+	// Services Items
+	// ==========================
 	$('.service-item-button').click(function() {
 		// Close all tabs
 

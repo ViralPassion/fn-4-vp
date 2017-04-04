@@ -485,6 +485,53 @@ button.btn-cta:after {
   right: 5px;
 }
 
+.header .lang-change button {
+  padding: 0;
+  border: 0;
+}
+
+.lang-chooser-container {
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 0.2s ease;
+}
+
+.lang-chooser-container.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lang-chooser-container .close i {
+  color: #D2B9A7;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-chooser {
+  padding: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.language-chooser li {
+  margin-bottom: 15px;
+}
+
+.language-chooser a {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 /* -----------------------------------------
 	04. Modules
 ----------------------------------------- */
@@ -565,10 +612,6 @@ button.btn-cta:after {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-}
-
-.hero-upper .double-down-icon {
-  color: #D2B9A7;
 }
 
 .styling-circles {
@@ -1095,8 +1138,6 @@ button.btn-cta:after {
 
 .hours-open .text-2 {
   color: #323131;
-  font-family: Arial;
-  font-weight: 700;
 }
 
 .deco-double-line {
@@ -1249,9 +1290,14 @@ button.btn-cta:after {
 }
 
 .tel {
-  font-family: Arial;
   font-size: 20px;
+  font-weight: 300;
   margin-bottom: 0;
+}
+
+.location {
+  font-weight: 700;
+  line-height: 29px;
 }
 
 .social-links {
@@ -1263,7 +1309,8 @@ button.btn-cta:after {
 }
 
 .footer-menu {
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
   padding-left: 0;
 }
 
@@ -1279,7 +1326,7 @@ button.btn-cta:after {
 }
 
 .copyright {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 300;
   margin-top: -15px;
 }

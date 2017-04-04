@@ -30,7 +30,16 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="#">
 	<link rel="apple-touch-icon" sizes="114x114" href="#">
 
-
+	<script>
+	  (function(d) {
+	    var config = {
+	      kitId: 'iae8byr',
+	      scriptTimeout: 3000,
+	      async: true
+	    },
+	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
 
 </head>
 <body>
@@ -42,7 +51,17 @@
 		<p>at the airport</p>
 		<img src="images/airplane-icon.png" alt="airplane icon" class="plane-icon">
 	</div>
-	<p class="lang-change">EN > </p>
+	<div class="lang-change">
+		<button type="button" name="button" class="btn-lang-chooser">EN</button>
+		<div class="lang-chooser-container">
+			<button class="close" type="button"><i class="material-icons">close</i></button>
+			<ul class="language-chooser language-chooser-custom qtranxs_language_chooser" id="qtranslate-chooser">
+				<li class="language-chooser-item language-chooser-item-en active"><a href="https://fairynails-aia.gr/en/" title="English (en)">English</a></li>
+				<li class="language-chooser-item language-chooser-item-de"><a href="https://fairynails-aia.gr/de/" title="Deutsch (de)">Deutch</a></li>
+			</ul>
+		</div>
+	</div>
+
  </header>
 
 
@@ -413,7 +432,7 @@
 <section class="hours-open">
 	<i class="material-icons">flight_takeoff</i>
 	<p class="text-1">Open. Everyday.</p>
-	<p class="text-2">DEPARTURE GATES A / B</p>
+	<p class="text-2 text-2 tk-proxima-nova-condensed">DEPARTURE GATES A / B</p>
 	<p class="text-3">05:30 - 23:00</p>
 
 	<div class="deco-double-line"></div>
@@ -451,8 +470,8 @@
 
 	<span class="divider"></span>
 
-	<p class="tel">+30 210 55 55 555</p>
-	<p class="proxima">
+	<p class="tel tk-proxima-nova-condensed">+30 210 55 55 555</p>
+	<p class="location tk-proxima-nova-condensed">
 		Αthens International Airport <br>
 		Departure Gate A &amp; B
 	</p>
@@ -462,7 +481,7 @@
 		<a href=""><img src="images/instagram-icon.png" alt=""></a>
 	</div>
 
-	<ul class="footer-menu proxima">
+	<ul class="footer-menu tk-proxima-nova-condensed">
 		<li><a href="">About Fairynails</a></li>
 		<li><a href="">More locations</a></li>
 		<li><a href="">Contact us</a></li>
@@ -470,7 +489,7 @@
 
 	<span class="divider"></span>
 
-	<p class="copyright proxima">Copyright © Fairynails  2017 - All Rights Reserved. </p>
+	<p class="copyright tk-proxima-nova-condensed">Copyright © Fairynails  2017 - All Rights Reserved. </p>
 </footer>
 
 <!-- Javascript
