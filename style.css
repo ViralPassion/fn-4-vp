@@ -391,6 +391,8 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover {
+  background: #fff;
+  color: #D2B9A7;
   text-decoration: none;
 }
 
@@ -427,6 +429,19 @@ button.btn-cta:after {
   position: absolute;
   top: 5px;
   right: -9px;
+}
+
+.btn.btn-cta:hover, .btn.btn-cta:focus,
+input[type="button"].btn-cta:hover,
+input[type="button"].btn-cta:focus,
+input[type="submit"].btn-cta:hover,
+input[type="submit"].btn-cta:focus,
+input[type="reset"].btn-cta:hover,
+input[type="reset"].btn-cta:focus,
+button.btn-cta:hover,
+button.btn-cta:focus {
+  background: #fff;
+  color: #D2B9A7;
 }
 
 /* Text Alignment Helpers

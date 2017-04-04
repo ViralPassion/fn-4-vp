@@ -1,6 +1,10 @@
 jQuery(function( $ ) {
 	'use strict';
 
+	var innerHeight =  window.innerHeight;
+
+	$('.hero-upper').css("height", innerHeight * 0.65 );
+	$('.hero-lower').css("height", innerHeight * 0.35 );
 
 	//  Language Chooser Pop up
 	// ===============================
@@ -63,6 +67,8 @@ jQuery(function( $ ) {
 		$('.after-hero .text-3').css("margin-right", st  / 10 );
 		$('.after-hero .line-1').css("right", 40 + st  / 10 );
 		$('.after-hero .line-2').css("right", 18 + st  / 7 );
+
+		console.log(innerHeight);
 
 	});
 
