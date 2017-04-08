@@ -64,11 +64,11 @@ jQuery(function( $ ) {
 	});
 
 	$(window).scroll(function() {
-		var x = $('.accordion-item.open').offset().top;
-		var y = $(window).scrollTop();
-		var itemHeight = $('.accordion-item.open').height();
-
-		console.log(x, y, itemHeight);
+		// var x = $('.accordion-item.open').offset().top;
+		// var y = $(window).scrollTop();
+		// var itemHeight = $('.accordion-item.open').height();
+		//
+		// console.log(x, y, itemHeight);
 
 		// if ( x < y - itemHeight + 56) {
 		// 	 $('.accordion-item.open .service-item-button').removeClass('fixed');
@@ -100,11 +100,17 @@ jQuery(function( $ ) {
 	$(window).scroll(function() {
 		var st = $(this).scrollTop();
 
+		if ($(window).width() > 992) {
+			$('.after-hero .line-1').css("right", 300 + st  / 10 );
+			$('.after-hero .line-2').css("right", 240 + st  / 7 );
+		} else {
+			$('.after-hero .line-1').css("right", 30 + st  / 10 );
+			$('.after-hero .line-2').css("right", 18 + st  / 7 );
+		}
+
 		$('.after-hero .text-1').css("margin-left", - 20 + (st/ 8) );
 		$('.after-hero .text-2').css("margin-left", - 10 + (st/ 12)  );
 		$('.after-hero .text-3').css("margin-right", st  / 10 );
-		$('.after-hero .line-1').css("right", 40 + st  / 10 );
-		$('.after-hero .line-2').css("right", 18 + st  / 7 );
 
 	});
 
