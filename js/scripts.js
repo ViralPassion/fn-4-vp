@@ -26,20 +26,31 @@ jQuery(function( $ ) {
 
 	// Services Items
 	// ==========================
-	$('.service-item-button').click(function() {
+	$('.service-item-button').click(function(e) {
 		// Close all tabs
 
 		if ($(this).parent().hasClass('open') ) {
 			// Close accordion item
 			$('.accordion-item').removeClass('open');
-			console.log('ffr');
 
 			// Remove position fixed
 			$(this).removeClass('fixed');
 		} else {
+			// Close All Accordion Items
 			$('.accordion-item').removeClass('open');
+
+			// Open clicked Accordion Item
 			$(this).parent().addClass('open');
+
+
 		}
+
+		setTimeout(function() {
+				$(e.currentTarget).addClass('fixed');
+				console.log('delay');
+			},
+			400
+		);
 
 	});
 
@@ -47,33 +58,28 @@ jQuery(function( $ ) {
 	// stick it smoothly on top of the window
 	$('.accordion-item').click(function() {
 
-		// $('.accordion-item').removeClass('open');
-		// $(this).addClass('open');
-
-		var x = $(this).offset().top;
-		var y = $(window).scrollTop();
+		// var x = $(this).offset().top;
+		// var y = $(window).scrollTop();
 
 		$('html, body').animate({
-	        'scrollTop' : $(this).position().top
+	        'scrollTop' : $(this).position().top + 1
 	    });
 
-		// $(this).find('.service-item-button').addClass('fixed');
-		// $(this).find('.accordion-item-content').css('margin-top', '56px');
+		console.log($('body').position().top) ;
 
-		// console.log(x, y);
 	});
 
 	$(window).scroll(function() {
-		// var x = $('.accordion-item.open').offset().top;
-		// var y = $(window).scrollTop();
-		// var itemHeight = $('.accordion-item.open').height();
-		//
-		// console.log(x, y, itemHeight);
+		var x = $('.accordion-item.open').offset().top;
+		var y = $(window).scrollTop();
+		var itemHeight = $('.accordion-item.open').height();
 
-		// if ( x < y - itemHeight + 56) {
-		// 	 $('.accordion-item.open .service-item-button').removeClass('fixed');
-		// 	 $('.accordion-item.open .service-item-button').addClass('absolute');
-		// }
+		console.log(x, y, itemHeight);
+
+		if ( x < y - itemHeight + 56) {
+			 $('.accordion-item.open .service-item-button').removeClass('fixed');
+			 $('.accordion-item.open .service-item-button').addClass('absolute');
+		}
 		// if ( x < y - itemHeight) {
 		// 	$('.accordion-item.open .service-item-button').removeClass('absolute');
 		// }

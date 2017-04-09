@@ -895,55 +895,8 @@ button.btn-cta:focus {
   position: relative;
 }
 
-.accordion-item button {
-  background: #D2B9A7;
-  width: 100%;
-  height: 56px;
-  border: none;
-  font-size: 28px;
-  padding: 12px;
-  position: relative;
-  box-shadow: inset 0px 3px 4px 2px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
-
-.accordion-item button i {
-  position: absolute;
-  left: 20px;
-  top: 30%;
-  pointer-events: none;
-  transition: 0.2s ease;
-}
-
-.accordion-item button:hover, .accordion-item button:focus {
-  background: #D2B9A7;
-  color: #fff;
-}
-
-.accordion-item button.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-.accordion-item button.absolute {
-  position: absolute;
-  top: auto;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
-}
-
 .accordion-item:first-child button {
   box-shadow: none;
-}
-
-.accordion-item .accordion-item-content {
-  height: 0;
-  overflow: hidden;
-  transition: 0.4s ease;
 }
 
 .accordion-item .line {
@@ -956,6 +909,57 @@ button.btn-cta:focus {
 
 .accordion-item.open .accordion-item-content {
   height: auto;
+}
+
+.service-item-button {
+  background: #D2B9A7;
+  width: 100%;
+  height: 56px;
+  border: none;
+  font-size: 28px;
+  padding: 12px;
+  position: relative;
+  box-shadow: inset 0px 3px 4px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.service-item-button i {
+  position: absolute;
+  left: 20px;
+  top: 30%;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.service-item-button:hover, .service-item-button:focus {
+  background: #D2B9A7;
+  color: #fff;
+}
+
+.service-item-button.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.service-item-button.absolute {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: none;
+}
+
+.accordion-item-content {
+  height: 0;
+  overflow: hidden;
+}
+
+.service-item-button.fixed + .accordion-item-content {
+  margin-top: 56px;
 }
 
 .accordion-item-list {
@@ -1119,8 +1123,17 @@ button.btn-cta:focus {
   width: 100%;
 }
 
+.slider-img {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .slick-prev,
-.slick-next {
+.slick-next,
+.slick-prev:hover,
+.slick-next:hover {
   background: none;
   border: none;
   background-image: url("images/slider-arrow.svg");
@@ -1137,7 +1150,8 @@ button.btn-cta:focus {
   left: 20px;
 }
 
-.slick-next {
+.slick-next,
+.slick-next:hover {
   right: 20px;
   transform: translateY(-50%) rotateY(180deg);
 }
@@ -1483,5 +1497,18 @@ button.btn-cta:focus {
   .slider {
     height: 100vh;
     max-height: none;
+  }
+  .slider img {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .call-now img {
+    height: auto;
+    width: 100%;
+    left: 0;
+    top: -140%;
+    bottom: auto;
+    transform: none;
   }
 }
