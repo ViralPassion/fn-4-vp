@@ -66,7 +66,7 @@ jQuery(function( $ ) {
 	});
 
 	$(window).scroll(function() {
-		var itemOffsetTop = $('.accordion-item.open').offset().top;
+		var itemOffset = $('.accordion-item.open').offset();
 		var y = $(window).scrollTop();
 		var itemHeight = $('.accordion-item.open').height();
 
@@ -75,27 +75,27 @@ jQuery(function( $ ) {
 
 		// When scrolling up and the bottom of the open iten reaches the top of the viewport
 		// remove class 'fixed' and add 'absolute-bottom' to make the button disappear smoothly
-		if ($('.accordion-item').hasClass('open') &&  itemOffsetTop < y - itemHeight ) {
+		if ($('.accordion-item').hasClass('open') &&   itemOffset.top < y - itemHeight ) {
 			$('.accordion-item.open .service-item-button').removeClass('fixed');
 			$('.accordion-item.open .service-item-button').addClass('absolute-bottom');
 		}
 
 		// When item open and on scrolling down the top of this item is in viewport
 		// remove 'fixed' and 'absolute' classes to let the button move freely with its item
-		if ( $('.service-item-button').hasClass('fixed') && itemOffsetTop > y ) {
+		if ( $('.service-item-button').hasClass('fixed') &&  itemOffset.top > y ) {
 			$('.service-item-button').removeClass('fixed');
 			console.log('Now remove classe on scroll down');
 		}
 
 		// If item open and on scrolling up its button reaches the top of the viewport
 		// add class 'fixed' to the button to remain visible.
-		if ( $('.accordion-item').hasClass('open') && itemOffsetTop < y ) {
+		if ( $('.accordion-item').hasClass('open') &&  itemOffset.top < y ) {
 			$('.accordion-item.open .service-item-button').addClass('fixed');
 		}
 
 		// When scrolling down and the bottom of the open item begins to be
 		// visible at the top of the viewport, make the button 'fixed'
-		if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') && itemOffsetTop > y - itemHeight ) {
+		if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') &&  itemOffset.top > y - itemHeight ) {
 			$('.accordion-item.open .service-item-button').removeClass('absolute-bottom');
 			$('.accordion-item.open .service-item-button').addClass('fixed');
 		}
