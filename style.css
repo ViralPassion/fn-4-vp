@@ -483,6 +483,37 @@ button.btn-cta:focus {
   border: 0;
 }
 
+.header.fixed {
+  position: fixed;
+  top: -100px;
+  background: #D2B9A7;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.13);
+  transition: 0.4s ease;
+}
+
+.header.fixed.open {
+  top: 0;
+}
+
+.header.fixed .logo {
+  margin-top: 13px;
+  margin-left: 30px;
+  width: 120px;
+}
+
+.header.fixed .logo p {
+  font-size: 8px;
+}
+
+.header.fixed .plane-icon {
+  display: none;
+}
+
+.header.fixed .lang-change {
+  top: 20px;
+  right: 15px;
+}
+
 .logo {
   width: 200px;
   margin: 30px auto 0;
@@ -1074,7 +1105,6 @@ button.btn-cta:focus {
   display: none;
   background: #D2B9A7;
   padding: 50px 0 40px;
-  margin-top: 120px;
 }
 
 .services-cta-section p {
@@ -1518,15 +1548,23 @@ button.btn-cta:focus {
     height: 215px;
     border-radius: 120px;
   }
+  .accordion-item {
+    box-shadow: none;
+  }
   .accordion-item button i {
     display: none;
   }
   .accordion-item-content {
-    padding-bottom: 55px;
+    padding-bottom: 70px;
+  }
+  .service-item-button {
+    width: 930px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .accordion-item-list {
     width: 60%;
-    margin: 60px auto 0;
+    margin: 50px auto 0;
     overflow: auto;
   }
   .accordion-item-list li {
