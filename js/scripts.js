@@ -26,81 +26,91 @@ jQuery(function( $ ) {
 
 	// Services Items
 	// ==========================
-	$('.service-item-button').click(function(e) {
-		// Close all tabs
 
-		if ($(this).parent().hasClass('open') ) {
-			// Close accordion item
-			$('.accordion-item').removeClass('open');
+	if ( window.matchMedia("(max-width: 996px)").matches) {
 
-			// Remove position fixed
-			$(this).removeClass('fixed');
-		} else {
-			// Close All Accordion Items
-			$('.accordion-item').removeClass('open');
+		$('.service-item-button').click(function(e) {
+			// Close all tabs
 
-			// Open clicked Accordion Item
-			$(this).parent().addClass('open');
+			if ($(this).parent().hasClass('open') ) {
+				// Close accordion item
+				$('.accordion-item').removeClass('open');
 
-			setTimeout(function() {
-					$(e.currentTarget).addClass('fixed');
-					console.log('delay');
-				},
-				400
-			);
+				// Remove position fixed
+				$(this).removeClass('fixed');
+			} else {
+				// Close All Accordion Items
+				$('.accordion-item').removeClass('open');
 
-		}
+				// Open clicked Accordion Item
+				$(this).parent().addClass('open');
 
-	});
+				setTimeout(function() {
+						$(e.currentTarget).addClass('fixed');
+						console.log('delay');
+					},
+					400
+				);
 
-	// On click accordion-item
-	// stick it smoothly on top of the window
-	$('.accordion-item').click(function() {
+			}
 
-		if ( $('.accordion-item').hasClass('open') ) {
-			$('html, body').animate({
-		        'scrollTop' : $(this).position().top + 1
-		    });
-		}
+		});
 
-	});
+		// On click accordion-item
+		// stick it smoothly on top of the window
+		$('.accordion-item').click(function() {
 
-	$(window).scroll(function() {
-		var itemOffset = $('.accordion-item.open').offset();
-		var y = $(window).scrollTop();
-		var itemHeight = $('.accordion-item.open').height();
+			if ( $('.accordion-item').hasClass('open') ) {
+				$('html, body').animate({
+			        'scrollTop' : $(this).position().top + 1
+			    });
+			}
 
-		// console.log(x, y, itemHeight);
+		});
+
+		$(window).scroll(function() {
+			var itemOffset = $('.accordion-item.open').offset();
+			var y = $(window).scrollTop();
+			var itemHeight = $('.accordion-item.open').height();
+
+			// console.log(x, y, itemHeight);
 
 
-		// When scrolling up and the bottom of the open iten reaches the top of the viewport
-		// remove class 'fixed' and add 'absolute-bottom' to make the button disappear smoothly
-		if ($('.accordion-item').hasClass('open') &&   itemOffset.top < y - itemHeight ) {
-			$('.accordion-item.open .service-item-button').removeClass('fixed');
-			$('.accordion-item.open .service-item-button').addClass('absolute-bottom');
-		}
+			// When scrolling up and the bottom of the open iten reaches the top of the viewport
+			// remove class 'fixed' and add 'absolute-bottom' to make the button disappear smoothly
+			if ($('.accordion-item').hasClass('open') &&   itemOffset.top < y - itemHeight ) {
+				$('.accordion-item.open .service-item-button').removeClass('fixed');
+				$('.accordion-item.open .service-item-button').addClass('absolute-bottom');
+			}
 
-		// When item open and on scrolling down the top of this item is in viewport
-		// remove 'fixed' and 'absolute' classes to let the button move freely with its item
-		if ( $('.service-item-button').hasClass('fixed') &&  itemOffset.top > y ) {
-			$('.service-item-button').removeClass('fixed');
-			console.log('Now remove classe on scroll down');
-		}
+			// When item open and on scrolling down the top of this item is in viewport
+			// remove 'fixed' and 'absolute' classes to let the button move freely with its item
+			if ( $('.service-item-button').hasClass('fixed') &&  itemOffset.top > y ) {
+				$('.service-item-button').removeClass('fixed');
+				console.log('Now remove classe on scroll down');
+			}
 
-		// If item open and on scrolling up its button reaches the top of the viewport
-		// add class 'fixed' to the button to remain visible.
-		if ( $('.accordion-item').hasClass('open') &&  itemOffset.top < y ) {
-			$('.accordion-item.open .service-item-button').addClass('fixed');
-		}
+			// If item open and on scrolling up its button reaches the top of the viewport
+			// add class 'fixed' to the button to remain visible.
+			if ( $('.accordion-item').hasClass('open') &&  itemOffset.top < y ) {
+				$('.accordion-item.open .service-item-button').addClass('fixed');
+			}
 
-		// When scrolling down and the bottom of the open item begins to be
-		// visible at the top of the viewport, make the button 'fixed'
-		if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') &&  itemOffset.top > y - itemHeight ) {
-			$('.accordion-item.open .service-item-button').removeClass('absolute-bottom');
-			$('.accordion-item.open .service-item-button').addClass('fixed');
-		}
+			// When scrolling down and the bottom of the open item begins to be
+			// visible at the top of the viewport, make the button 'fixed'
+			if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') &&  itemOffset.top > y - itemHeight ) {
+				$('.accordion-item.open .service-item-button').removeClass('absolute-bottom');
+				$('.accordion-item.open .service-item-button').addClass('fixed');
+			}
 
-	});
+		});
+
+	} else {
+		// -------------------
+		//   min-width 996px
+		// -------------------
+		$('.accordion-item').addClass('open');
+	}
 
 
 	// After hero Text effect
