@@ -483,12 +483,17 @@ button.btn-cta:focus {
   border: 0;
 }
 
+.header .header-cta {
+  display: none;
+}
+
 .header.fixed {
   position: fixed;
   top: -100px;
   background: #D2B9A7;
   box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.13);
   transition: 0.4s ease;
+  padding: 6px 0 5px;
 }
 
 .header.fixed.open {
@@ -496,22 +501,46 @@ button.btn-cta:focus {
 }
 
 .header.fixed .logo {
-  margin-top: 13px;
-  margin-left: 30px;
-  width: 120px;
+  margin-top: 0;
+  margin-left: 13px;
+  width: 125px;
+  float: left;
 }
 
 .header.fixed .logo p {
-  font-size: 8px;
-}
-
-.header.fixed .plane-icon {
   display: none;
 }
 
+.header.fixed .plane-icon {
+  top: 12px;
+  right: -21px;
+}
+
+.header.fixed .plane-icon i {
+  font-size: 36px;
+}
+
 .header.fixed .lang-change {
-  top: 20px;
-  right: 15px;
+  display: none;
+}
+
+.header.fixed .header-cta {
+  display: inline-block;
+  font-size: 18px;
+  height: 33px;
+  width: 116px;
+  min-width: auto;
+  padding: 5px;
+  float: right;
+  margin-right: 10px;
+}
+
+.header.fixed .header-cta i {
+  font-size: 18px;
+}
+
+.header.fixed .header-cta:after {
+  display: none;
 }
 
 .logo {
@@ -980,7 +1009,7 @@ button.btn-cta:focus {
 
 .service-item-button.fixed {
   position: fixed;
-  top: 61px;
+  top: 44px;
   right: 0;
 }
 

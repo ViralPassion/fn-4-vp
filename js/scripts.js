@@ -84,7 +84,7 @@ jQuery(function( $ ) {
 
 			if ( $('.accordion-item').hasClass('open') ) {
 				$('html, body').animate({
-			        'scrollTop' : $(this).position().top - 61
+			        'scrollTop' : $(this).position().top - 44
 			    });
 			}
 
@@ -102,27 +102,27 @@ jQuery(function( $ ) {
 
 			// When scrolling up and the bottom of the open iten reaches the top of the viewport
 			// remove class 'fixed' and add 'absolute-bottom' to make the button disappear smoothly
-			if ($('.accordion-item').hasClass('open') && itemOffset.top < y - itemHeight + 61) {
+			if ($('.accordion-item').hasClass('open') && itemOffset.top < y - itemHeight + 44) {
 				$('.accordion-item.open .service-item-button').removeClass('fixed');
 				$('.accordion-item.open .service-item-button').addClass('absolute-bottom');
 			}
 
 			// When item open and on scrolling down the top of this item is in viewport
 			// remove 'fixed' and 'absolute' classes to let the button move freely with its item
-			if ( $('.service-item-button').hasClass('fixed') &&  itemOffset.top > y + 61) {
+			if ( $('.service-item-button').hasClass('fixed') &&  itemOffset.top > y + 44) {
 				$('.service-item-button').removeClass('fixed');
 				console.log('Now remove class on scroll down');
 			}
 
 			// If item open and on scrolling up its button reaches the top of the viewport
 			// add class 'fixed' to the button to remain visible.
-			if ( $('.accordion-item').hasClass('open') &&  itemOffset.top < y + 61 ) {
+			if ( $('.accordion-item').hasClass('open') &&  itemOffset.top < y + 44 ) {
 				$('.accordion-item.open .service-item-button').addClass('fixed');
 			}
 
 			// When scrolling down and the bottom of the open item begins to be
 			// visible at the top of the viewport, make the button 'fixed'
-			if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') &&  itemOffset.top > y - itemHeight +61 ) {
+			if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') &&  itemOffset.top > y - itemHeight + 44 ) {
 				$('.accordion-item.open .service-item-button').removeClass('absolute-bottom');
 				$('.accordion-item.open .service-item-button').addClass('fixed');
 			}
